@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Form.scss";
 
 export default function FormActivity() {
@@ -9,9 +10,30 @@ export default function FormActivity() {
   const [img3, setImg3] = useState("");
   const [img4, setImg4] = useState("");
   const [distance, setDistance] = useState("");
+  const [duration, setDuration] = useState("");
+  const [difflevel, setDifflevel] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("circuit");
+    const postCircuit = async () => {
+      try {
+        await axios.post("https://marscapade-backend.herokuapp.com/circuits", {
+          title: title,
+          description: description,
+          image_1: img1,
+          image_2: img2,
+          image_3: img3,
+          image_4: img4,
+          distance: distance,
+          duration: duration,
+          difflevel: difflevel,
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    postCircuit();
   };
 
   return (
@@ -100,8 +122,29 @@ export default function FormActivity() {
             required
           />
         </label>
+        <label>
+          Duration :
+          <input
+            name="duration"
+            type="text"
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+            required
+          />
+        </label>
 
-        <button>Submit</button>
+        <label>
+          Level of Difficulty :
+          <input
+            name="difflevel"
+            type="text"
+            value={difflevel}
+            onChange={(e) => setDifflevel(e.target.value)}
+            required
+          />
+        </label>
+
+        <input type="submit" value="Submit"></input>
       </form>
     </div>
   );

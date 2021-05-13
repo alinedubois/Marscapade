@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Form.scss";
 
 export default function FormActivity() {
   const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [person, setPerson] = useState("");
   const [img1, setImg1] = useState("");
@@ -13,6 +15,25 @@ export default function FormActivity() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("activity");
+    const postActivity = async () => {
+      try{
+          await axios.post('https://marscapade-backend.herokuapp.com/activities', {
+            name: name,
+            description: description,
+            nbpax: person,
+            location: location,
+            image_1: img1,
+            image_2: img2,
+            image_3: img3,
+            image_4: img4,
+            price: price
+          })
+      } catch(err) {
+          console.log(err)
+      }
+    };
+    postActivity();
   };
 
   return (
@@ -20,16 +41,29 @@ export default function FormActivity() {
       <form onSubmit={handleSubmit}>
         <h1>Create Activity</h1>
 
-        <label>
-          Name :
-          <input
-            name="name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </label>
+        <div className="div-row">
+          <label id="form-name">
+            Name :
+            <input
+              name="name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </label>
+
+          <label>
+            Price :
+            <input
+              name="price"
+              type="number"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              required
+            />
+          </label>
+        </div>
 
         <label>
           Description :
@@ -55,7 +89,7 @@ export default function FormActivity() {
         </label>
         <label>
           Images URL :
-          <div className="img-row">
+          <div className="div-row">
             <div className="img-input">
               <input
                 name="img1"
@@ -81,7 +115,7 @@ export default function FormActivity() {
               </div>
             </div>
           </div>
-          <div className="img-row">
+          <div className="div-row">
             <div className="img-input">
               <input
                 name="img3"
@@ -118,7 +152,7 @@ export default function FormActivity() {
           />
         </label>
 
-        <button>Submit</button>
+        <input type="submit" value="Submit"></input>
       </form>
     </div>
   );

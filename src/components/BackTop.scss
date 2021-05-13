@@ -1,13 +1,13 @@
 .back-to-top {
-  // display: flex;
-  align-items: flex-end;
+  display: flex;
+  align-items: center;
   justify-content: center;
   position: fixed;
   font-family: 'Old Standard TT', serif;
   height: 5vh;
   width: 5vh;
   bottom: 10vh;
-  left: 1rem;
+  left: 1vh;
   border-radius: 50%;
   scroll-behavior: smooth;
   color: white;
@@ -16,6 +16,7 @@
   margin: auto 0;
   cursor: pointer;
   transition: .2s transform, .2s .1s opacity;
+  z-index: 1000;
 
   &:hover{
     transform: scale(1.2);

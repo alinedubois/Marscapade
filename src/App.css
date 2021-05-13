@@ -103,3 +103,36 @@
   font-weight: bold;
   font-size: 0.80rem;
 }
+
+.dashboardTour {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboardTour-image {
+  width: 80px;
+}
+
+.dashboardTour-title {
+  font-weight: bold;
+  font-size: 0.80rem;
+}
+
+.dashboardTour-content p {
+  color: #6b4035;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 414px) {
+  .reactour__helper {
+    margin-right: 20px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .reactour__close {
+    display: none !important;
+  }
+}

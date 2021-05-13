@@ -1,0 +1,71 @@
+import "./Dashboard.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { CircularProgress } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
+
+export default function DashActivityListing() {
+  const [activityList, setActivityList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getActivityList = async () => {
+      try {
+        const response = await axios.get("https://marscapade-backend.herokuapp.com/activities");
+        console.log("response", response);
+        setActivityList(response.data);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getActivityList();
+  }, [loading]);
+
+  const handleDeleteActivity = (id) => {
+    const deleteCircuit = async () => {
+      try {
+        await axios.delete(
+          `https://marscapade-backend.herokuapp.com/activities/${id}`
+        );
+        setActivityList(activityList.filter((activity) => activity.id !== id));
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    deleteCircuit();
+  };
+
+  console.log("activities", activityList);
+  if (loading) return <CircularProgress />;
+
+  console.log("dash activity", activityList);
+
+  return (
+    activityList &&
+    activityList.length > 0 &&
+    activityList.map((act, index) => {
+      return (
+        <div className="dash-item" key={index}>
+          <div className="item-head">
+            <h3>
+              #{act.id} {act.name}
+            </h3>
+            <DeleteIcon onClick={() => handleDeleteActivity(act.id)} />
+          </div>
+          <div className="dash-imgs">
+            {act.image_1 && <img src={act.image_1} alt=""/>}
+            {act.image_2 && <img src={act.image_2} alt=""/>}
+            {act.image_3 && <img src={act.image_3} alt=""/>}
+            {act.image_4 && <img src={act.image_4} alt=""/>}
+          </div>
+          <p>{act.description}</p>
+          <p>Price: {act.price ? act.price : "0.00"}$</p>
+          <p>Location: {act.location}</p>
+          <p>Nbr de participant: {act.nbpax}</p>
+        </div>
+      );
+    })
+  );
+}

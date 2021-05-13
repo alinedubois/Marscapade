@@ -13,13 +13,50 @@
     font-family: 'Orbitron', sans-serif;
 }
 
-.welcome__cta-primary {
-    background: #bd4f35;
-    color: #fff;
-    margin-top: 1rem;
-    padding: 0.7rem 1.5rem;
-    border: none;
-    border-radius: 20px;
-    font-weight: 700;
-    font-family: 'Orbitron', sans-serif;
+.welcome div {
+    width: 100%;
 }
+
+.welcome div h2 {
+    margin-bottom: 40px;
+}
+
+.mars-live {
+    height: 500px;
+    border: none;
+}
+
+@media screen and (min-width: 280px) and (max-width: 767px) {
+    .welcome div h2 {
+        margin-bottom: 20px !important;
+        margin-top: -40px !important;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .mars-live {
+        height: 450px;
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .welcome div h2 {
+        margin-bottom: 20px !important;
+        margin-top: -40px !important;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .mars-live {
+        height: 450px;
+        width: 90vw;
+    }
+}
+
+
+@media screen and (min-width: 1280px){
+    .mars-live {
+        width: 100% !important;
+    }
+}
+
+

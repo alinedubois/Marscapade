@@ -13,7 +13,7 @@ export const Footer = () => {
 
                     <a className="email-la-loutre" href="mailto:MarsCapade@laloutre.fr">MarsCapade@laloutre.fr</a>
 
-                <a href="https://github.com/vio9/Marscapade" target="_blank">
+                <a href="https://github.com/vio9/Marscapade" target="_blank" rel='noreferrer'>
                     <img className="logo-github" src={githublogo} alt="logo Github"/>
                 </a>
             </div>
