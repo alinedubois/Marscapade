@@ -52,12 +52,12 @@ export default function CircuitDetails () {
     
     const { id } = useParams()
     console.log("from detail", id)
-    
+
     useEffect(() => {
         const getCircuitsDetails = async () => {
             try {
-                const circuitsDetails = await axios.get(`http://localhost:8081/circuits/${id}`)
-                setCircuitDetails(circuitsDetails.data[0])
+                const circuitsDetails = await axios.get(`https://marscapade-backend.herokuapp.com/circuits/${id}`)
+                setCircuitDetails(circuitsDetails.data)
             } catch(err) {
                 console.log(err)
             } finally {

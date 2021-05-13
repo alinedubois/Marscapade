@@ -53,9 +53,9 @@ export default function ActivityDetail() {
     const getDetail = async () => {
       try {
         const detailData = await axios.get(
-          `http://localhost:8081/activities/${id}`
+          `https://marscapade-backend.herokuapp.com/activities/${id}`
         );
-        setDetail(detailData.data[0]);
+        setDetail(detailData.data);
       } catch (err) {
         console.log(err);
       } finally {

@@ -18,7 +18,7 @@ export default function FormActivity() {
     console.log("activity");
     const postActivity = async () => {
       try{
-          const response = await axios.post('http://localhost:8081/activities', {
+          const response = await axios.post('https://marscapade-backend.herokuapp.com/activities', {
             name: name,
             description: description,
             nbpax: person,

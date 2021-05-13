@@ -12,7 +12,7 @@ export default function Circuits() {
   useEffect(() => {
     const getCircuitsList = async () => {
       try {
-        const circuitsList = await axios.get("http://localhost:8081/circuits");
+        const circuitsList = await axios.get("https://marscapade-backend.herokuapp.com/circuits");
         setCircuitsList(circuitsList.data);
       } catch (err) {
         console.log(err);
