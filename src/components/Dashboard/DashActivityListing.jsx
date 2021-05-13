@@ -26,7 +26,7 @@ export default function DashActivityListing() {
   const handleDeleteActivity = (id) => {
     const deleteCircuit = async () => {
       try {
-        const response = await axios.delete(
+        await axios.delete(
           `https://marscapade-backend.herokuapp.com/activities/${id}`
         );
         setActivityList(activityList.filter((activity) => activity.id !== id));
@@ -55,10 +55,10 @@ export default function DashActivityListing() {
             <DeleteIcon onClick={() => handleDeleteActivity(act.id)} />
           </div>
           <div className="dash-imgs">
-            {act.image_1 && <img src={act.image_1}></img>}
-            {act.image_2 && <img src={act.image_2}></img>}
-            {act.image_3 && <img src={act.image_3}></img>}
-            {act.image_4 && <img src={act.image_4}></img>}
+            {act.image_1 && <img src={act.image_1} alt=""/>}
+            {act.image_2 && <img src={act.image_2} alt=""/>}
+            {act.image_3 && <img src={act.image_3} alt=""/>}
+            {act.image_4 && <img src={act.image_4} alt=""/>}
           </div>
           <p>{act.description}</p>
           <p>Price: {act.price ? act.price : "0.00"}$</p>

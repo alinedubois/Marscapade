@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./BackTop.scss";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 

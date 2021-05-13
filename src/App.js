@@ -1,14 +1,10 @@
 import OtterRouter from "./Router";
 import Music from "./components/Music";
-import Header from "./components/Header";
-import { Footer } from "./components/Footer/Footer";
 import BackTop from "./components/BackTop";
 import "./App.css";
-import Welcome from "./components/Welcome";
-import Navbar from "./components/Navbar";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Tour from "reactour";
-import { Button } from "@material-ui/core";
+import {Button} from "@material-ui/core";
 import tour1 from "./components/images/tour1.png";
 import tour2 from "./components/images/tour2.png";
 import tour3 from "./components/images/tour3.png";
@@ -16,7 +12,7 @@ import tour4 from "./components/images/tour4.png";
 
 const homeTour = (
   <div className="homeTour">
-    <img className="homeTour-image" src={tour1} />
+    <img className="homeTour-image" src={tour1} alt=''/>
     <div className="homeTour-content">
       <div className="homeTour-title">Discover our beautiful home page</div>
       <p>
@@ -36,13 +32,13 @@ const circuitsTour = (
         your trip !{" "}
       </p>
     </div>
-    <img className="circuitTour-image" src={tour2} />
+    <img className="circuitTour-image" src={tour2} alt=''/>
   </div>
 );
 
 const activitiesTour = (
   <div className="activitiesTour">
-    <img className="activitiesTour-image" src={tour3} />
+    <img className="activitiesTour-image" src={tour3} alt=''/>
     <div className="activities-content">
       <div className="activitiesTour-title">
         Discover our incredible activities
@@ -57,7 +53,7 @@ const activitiesTour = (
 );
 
 const dashboardTour = <div className="dashboardTour">
-    <img className="dashboardTour-image" src={tour4}/>
+    <img className="dashboardTour-image" src={tour4} alt=''/>
     <div className="dashboardTour-content">
         <div className="dashboardTour-title">Discover our beautiful dashboard</div>
         <p>If you're an admin, you can find here the way to update circuits and activities for your guests.</p>

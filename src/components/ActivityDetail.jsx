@@ -115,18 +115,21 @@ export default function ActivityDetail() {
             className={classes.img}
             src={detail.image_2}
             title={detail.title}
+            alt={detail.title}
           />
 
           <img
             className={classes.img}
             src={detail.image_3}
             title={detail.title}
+            alt={detail.title}
           />
 
           <img
             className={classes.img}
             src={detail.image_4}
             title={detail.title}
+            alt={detail.title}
           />
         </div>
       </Card>

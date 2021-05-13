@@ -1,5 +1,4 @@
 import "./WallE.scss";
-import { Link } from "react-router-dom";
 import wallePng from "../../assets/wall-e.png";
 
 export default function WallE() {

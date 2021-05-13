@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import ptison from "../assets/music.mp3";
 
 export default function Music() {

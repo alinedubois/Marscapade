@@ -1,7 +1,5 @@
-import { useState } from "react";
-import axios from "axios";
 import "./Form/Form.scss";
-import { useHistory } from "react-router";
+import {useHistory} from "react-router";
 
 export default function DashLogin({ isLogin, setIsLogin }) {
   // const [email, setEmail] = useState();

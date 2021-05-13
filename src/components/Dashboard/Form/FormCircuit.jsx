@@ -18,7 +18,7 @@ export default function FormActivity() {
     console.log("circuit");
     const postCircuit = async () => {
       try {
-        const response = await axios.post("https://marscapade-backend.herokuapp.com/circuits", {
+        await axios.post("https://marscapade-backend.herokuapp.com/circuits", {
           title: title,
           description: description,
           image_1: img1,

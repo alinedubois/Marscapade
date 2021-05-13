@@ -26,7 +26,7 @@ export default function DashCircuitListing() {
   const handleDeleteCircuit = (id) => {
     const deleteCircuit = async () => {
       try {
-        const response = await axios.delete(
+        await axios.delete(
           `https://marscapade-backend.herokuapp.com/circuits/${id}`
         );
         setCircuitList(circuitList.filter((circuit) => circuit.id !== id));
@@ -54,10 +54,10 @@ export default function DashCircuitListing() {
             <DeleteIcon onClick={() => handleDeleteCircuit(circuit.id)} />
           </div>
           <div className="dash-imgs">
-            {circuit.image_1 && <img src={circuit.image_1}></img>}
-            {circuit.image_2 && <img src={circuit.image_2}></img>}
-            {circuit.image_3 && <img src={circuit.image_3}></img>}
-            {circuit.image_4 && <img src={circuit.image_4}></img>}
+            {circuit.image_1 && <img src={circuit.image_1} alt=""/>}
+            {circuit.image_2 && <img src={circuit.image_2} alt=""/>}
+            {circuit.image_3 && <img src={circuit.image_3} alt=""/>}
+            {circuit.image_4 && <img src={circuit.image_4} alt=""/>}
           </div>
           <p>Circuit Desc: {circuit.description}</p>
           <p>Distance: {circuit.distance}m</p>
